@@ -1,263 +1,72 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | TomasAMByt - Developer & Staff Manager</title>
+    <title>Portfolio | TomasAMByt</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0b0e14;
-            --card-bg: #161b22;
-            --accent: #2563eb;
-            --accent-glow: rgba(37, 99, 235, 0.2);
-            --text-main: #f0f6fc;
-            --text-dim: #8b949e;
-            --border: #30363d;
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            margin: 0;
-            line-height: 1.8;
-            scroll-behavior: smooth;
-        }
-
-        /* Navegación */
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            background: rgba(11, 14, 20, 0.85);
-            backdrop-filter: blur(10px);
-            padding: 1.2rem 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
-
-        nav a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        nav a:hover { color: var(--accent); }
-
-        /* Hero Section */
-        .hero {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0b0e14 100%);
-        }
-
-        .hero h1 { 
-            font-size: 4.5rem; 
-            margin-bottom: 0.5rem; 
-            font-weight: 800;
-            background: linear-gradient(to right, #fff, var(--text-dim));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p { 
-            color: var(--accent); 
-            font-size: 1.4rem; 
-            font-weight: 600;
-            max-width: 700px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero .subtitle {
-            color: var(--text-dim);
-            font-size: 1rem;
-            margin-top: 10px;
-        }
-
-        /* Contenedores */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 100px 20px;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 50px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        h2::after {
-            content: "";
-            height: 1px;
-            flex-grow: 1;
-            background: var(--border);
-        }
-
-        /* Tarjetas Estilizadas */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 10px 30px var(--accent-glow);
-            transform: translateY(-5px);
-        }
-
-        .card h3 { 
-            color: var(--accent); 
-            margin-top: 0; 
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .tag {
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--accent);
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            display: inline-block;
-            border: 1px solid var(--accent);
-        }
-
-        /* Stack Tecnológico */
-        .tech-stack {
-            display: flex;
-            wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .tech-item {
-            background: #0b0e14;
-            padding: 5px 15px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            border: 1px solid var(--border);
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px;
-            border-top: 1px solid var(--border);
-            color: var(--text-dim);
-            font-size: 0.9rem;
-        }
-
-        strong { color: var(--text-main); }
-
-    </style>
 </head>
 <body>
 
     <nav>
         <div class="nav-content">
-            <a href="#sobre-mi">Perfil</a>
-            <a href="#desarrollo">Ingeniería</a>
-            <a href="#staff">Liderazgo</a>
+            <a href="#sobre-mi" class="nav-link">Perfil</a>
+            <a href="#metodologia" class="nav-link">Metodología</a>
+            <a href="#desarrollo" class="nav-link">Ingeniería</a>
+            <a href="#proyectos" class="nav-link">Proyectos</a>
+            <a href="#resenas" class="nav-link">Reseñas</a>
+            <button id="theme-toggle">🌓</button>
         </div>
     </nav>
 
     <header class="hero">
         <h1>TomasAMByt</h1>
-        <p>Dev en proceso de ser Semi-Professional Minecraft Developer & Staff Manager</p>
-        <div class="subtitle">Especializado en Arquitectura de Servidores y Automatización de Ecosistemas Digitales</div>
+        <p>Semi-Professional Minecraft Developer & Community Manager</p>
+        <div class="stats-container">
+            <div class="stat-item"><span class="counter" data-target="50">0</span>+<span> Plugins</span></div>
+            <div class="stat-item"><span class="counter" data-target="1000">0</span>+<span> Usuarios</span></div>
+            <div class="stat-item"><span class="counter" data-target="100">0</span>%<span> Uptime</span></div>
+        </div>
     </header>
 
     <div class="container" id="sobre-mi">
-        <h2>¿Quien soy?</h2>
-        <p>
-            Hola me llamo Tomas, soy un desarrollador enfocado en la creación de experiencias únicas dentro de Minecraft y la automatización de comunidades en Discord. 
-            Me especializo en la configuración técnica de servidores (estoy aprendiendo cada día más) y en la gestión de equipos para mantener entornos tranquilos y profesionales.
-        </p>
+        <h2>Perfil Profesional</h2>
+        <p>Especialista en infraestructura técnica y optimización de rendimiento en entornos de juego competitivos.</p>
     </div>
 
-    <div class="container" id="desarrollo">
-        <h2>Desarrollo e Ingeniería Técnica</h2>
+    <div class="container" id="metodologia">
+        <h2>Metodología de Trabajo</h2>
         <div class="grid">
             <div class="card">
-                <span class="tag">configuracion</span>
-                <h3>Desarrollo de Servidores de Minecraft</h3>
-                <p>
-                    Especialista en la implementación de entornos complejos mediante la configuración avanzada de plugins. Poseo un dominio profundo de LuckPerms para la gestión de jerarquías y permisos, DeluxeMenus para la creación de interfaces de usuario dinámicas y ConditionalEvents para el desarrollo de lógica de juego personalizada, entre muchos otros. 
-                    Mi objetivo es eliminar la dependencia de developers externos en los que no tengas confianza, tambien me pongo una meta en lograr mecánicas únicas a través de la configuracion del servidor.
-                </p>
+                <h3>Eficiencia y Ética</h3>
+                <p>Mi flujo de trabajo se basa en la planificación técnica antes de la ejecución, garantizando que cada configuración sea limpia y fácil de mantener a largo plazo.</p>
             </div>
-
             <div class="card">
-                <span class="tag">Automatización y Bots</span>
-                <h3>Desarrollo de Sistemas con Python</h3>
-                <p>
-                    Diseño y despliegue de soluciones de automatización en el discord oficial de tu network. Desarrollo bots personalizados que actúan como el núcleo operativo de comunidades, integrando sistemas ya sea de Moderación como otros sistemas de entretenimiento, módulos de soporte mediante tickets con logs auditables y sincronización de datos en tiempo real entre el juego y las plataformas de comunicación. 
-                    Me enfoco en escribir código limpio y eficiente para asegurar una respuesta instantánea y una alta disponibilidad, ademas cabe recalcar que puedo crear una pagina externa para el seguimiento de sanciones que se hacen mediante el bot.
-                </p>
+                <h3>Comunicación Transparente</h3>
+                <p>Mantengo reportes constantes sobre el progreso, asegurando que los objetivos de la comunidad se cumplan con precisión técnica.</p>
             </div>
         </div>
     </div>
 
-    <div class="container" id="staff">
-        <h2>Gobernanza y Gestión de Comunidades</h2>
+    <div class="container" id="proyectos">
+        <h2>Proyectos y Colaboraciones</h2>
+        <div class="gallery">
+            <div class="photo-card"><img src="thumb1.jpg" alt="NocturneCraft"><p>NocturneCraft Network</p></div>
+            <div class="photo-card"><img src="thumb2.jpg" alt="DexlunMC"><p>DexlunMC Integration</p></div>
+        </div>
+    </div>
+
+    <div class="container" id="resenas">
+        <h2>Reseñas</h2>
         <div class="grid">
             <div class="card">
-                <span class="tag">Liderazgo y etica</span>
-                <h3>Moderación, Ética y Liderazgo de Equipos</h3>
-                <p>
-                    Experto en la resulocion de conflictos complejos y en la ejecución de normativas bajo principios de imparcialidad y transparencia. Cuento con una sólida capacidad analítica para la toma de decisiones críticas en situaciones de alta presión, garantizando siempre la integridad de la comunidad.
-                    <br><br>
-                    Mi experiencia incluye la coordinación técnica de equipos de staff, donde lidero procesos de selección rigurosos y diseño protocolos de seguridad para mitigar riesgos internos y externos, asegurando un entorno de juego profesional y libre de toxicidad.
-                </p>
-                <div class="tech-stack">
-                    <span class="tech-item">Resolucion de conflictos</span>
-                    <span class="tech-item">Tutor de Staffs</span>
-                    <span class="tech-item">Liderazgo</span>
-                    <span class="tech-item">Staff Manager</span>
-                </div>
+                <p>"Excelente capacidad técnica para resolver conflictos internos del servidor."</p>
+                <strong>- Partner de NocturneCraft</strong>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 - Portfolio de TomasAMByt</p>
-        <p style="font-size: 0.7rem; margin-top: 10px; opacity: 0.5;">Desarrollado con enfoque en rendimiento y legibilidad técnica.</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
