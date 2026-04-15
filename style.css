@@ -6,15 +6,17 @@
     --text-main: #f0f6fc;
     --text-dim: #8b949e;
     --border: #30363d;
+    --hero-text: #ffffff;
 }
 
-/* Modo Claro manteniendo tus tonos */
+/* Modo Claro Corregido */
 [data-theme="light"] {
-    --bg: #f6f8fa;
-    --card-bg: #ffffff;
+    --bg: #ffffff;
+    --card-bg: #f6f8fa;
     --text-main: #1f2328;
-    --text-dim: #656d76;
+    --text-dim: #57606a; /* Gris más oscuro para que se vea bien */
     --border: #d0d7de;
+    --hero-text: #1f2328;
 }
 
 * { box-sizing: border-box; }
@@ -32,11 +34,12 @@ body {
 nav {
     position: fixed;
     top: 0; width: 100%;
-    background: rgba(11, 14, 20, 0.85);
+    background: var(--bg); /* Ahora cambia con el tema */
     backdrop-filter: blur(10px);
     padding: 1.2rem 0;
     z-index: 1000;
     border-bottom: 1px solid var(--border);
+    transition: background-color 0.3s;
 }
 
 .nav-content {
@@ -45,6 +48,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 40px;
+    align-items: center;
 }
 
 nav a {
@@ -57,26 +61,29 @@ nav a {
     transition: 0.3s;
 }
 
-nav a:hover { color: var(--accent); text-shadow: 0 0 8px var(--accent); }
+nav a:hover { 
+    color: var(--accent); 
+    text-shadow: 0 0 8px var(--accent-glow); 
+}
 
 .hero {
-    height: 100vh; /* Ajustado a 100 para que ocupe todo al inicio */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0b0e14 100%);
+    /* Ajuste de degradado según el tema */
+    background: radial-gradient(circle at 50% 50%, var(--accent-glow) 0%, var(--bg) 100%);
 }
 
 .hero h1 { 
     font-size: 4.5rem; 
     margin-bottom: 0.5rem; 
     font-weight: 800;
-    background: linear-gradient(to right, #fff, var(--text-dim));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--hero-text);
+    transition: color 0.3s;
 }
 
 .hero p { 
@@ -86,9 +93,22 @@ nav a:hover { color: var(--accent); text-shadow: 0 0 8px var(--accent); }
     max-width: 700px;
 }
 
+.hero .subtitle {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
 .container { max-width: 1000px; margin: 0 auto; padding: 100px 20px; }
 
-h2 { font-size: 2rem; margin-bottom: 50px; display: flex; align-items: center; gap: 15px; }
+h2 { 
+    font-size: 2rem; 
+    margin-bottom: 50px; 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    color: var(--text-main);
+}
 h2::after { content: ""; height: 1px; flex-grow: 1; background: var(--border); }
 
 .grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
@@ -107,6 +127,8 @@ h2::after { content: ""; height: 1px; flex-grow: 1; background: var(--border); }
     transform: translateY(-5px);
 }
 
+.card h3 { color: var(--accent); margin-top: 0; }
+
 .tag {
     background: rgba(37, 99, 235, 0.1);
     color: var(--accent);
@@ -121,7 +143,23 @@ h2::after { content: ""; height: 1px; flex-grow: 1; background: var(--border); }
 }
 
 .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-.tech-item { background: var(--bg); padding: 5px 15px; border-radius: 6px; font-size: 0.8rem; color: var(--text-dim); border: 1px solid var(--border); }
 
-footer { text-align: center; padding: 60px; border-top: 1px solid var(--border); color: var(--text-dim); }
-strong { color: var(--text-main); }
+.tech-item { 
+    background: var(--bg); 
+    padding: 5px 15px; 
+    border-radius: 6px; 
+    font-size: 0.8rem; 
+    color: var(--text-dim); 
+    border: 1px solid var(--border); 
+}
+
+footer { 
+    text-align: center; 
+    padding: 60px; 
+    border-top: 1px solid var(--border); 
+    color: var(--text-dim); 
+}
+
+/* Estilos para los contadores */
+.stat-value { font-size: 2rem; font-weight: 800; color: var(--text-main); }
+.stat-desc { color: var(--text-dim); font-size: 0.8rem; text-transform: uppercase; }
