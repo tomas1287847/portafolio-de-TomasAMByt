@@ -7,22 +7,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Ajuste crítico para que no se asome el contenido de abajo */
+        /* Bloqueo total para que la primera pantalla sea limpia */
         html, body {
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
         .hero {
-            position: relative;
             height: 100vh;
-            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 10;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
         }
+        h1 { margin-top: 0; }
     </style>
 </head>
 <body>
@@ -70,7 +72,7 @@
                 <span class="tag">Infraestructura</span>
                 <h3>Arquitectura en Minecraft</h3>
                 <p>
-                    Me especializo en la implementación de mecánicas complejas utilizando el potencial nativo de servidores Paper y Spigot. Dominio avanzado de LuckPerms para la seguridad y jerarquías, DeluxeMenus para interfaces visuales intuitivas y ConditionalEvents para programar comportamientos dinámicos que reaccionan a las acciones de los jugadores en tiempo real. Mi trabajo garantiza que el servidor sea ligero, potente y único en su clase.
+                    Me especializo en la implementación de mecánicas complejas utilizando el potencial nativo de servidores Paper y Spigot. Poseo un dominio avanzado de LuckPerms para la seguridad y jerarquías, DeluxeMenus para interfaces visuales intuitivas y ConditionalEvents para programar comportamientos dinámicos que reaccionan a las acciones de los jugadores en tiempo real. Mi trabajo garantiza que el servidor sea ligero, potente y único en su clase.
                 </p>
             </div>
 
@@ -126,7 +128,6 @@
 
     <footer>
         <p>&copy; 2026 - Portfolio Profesional de TomasAMByt</p>
-        <p style="font-size: 0.7rem; margin-top: 10px; opacity: 0.5;">Desarrollado con enfoque en la eficiencia técnica y la experiencia de usuario.</p>
     </footer>
 
     <script src="script.js"></script>
