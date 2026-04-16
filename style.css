@@ -1,148 +1,133 @@
-<!DOCTYPE html>
-<html lang="es" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | TomasAMByt - Desarrollador y Gestor de Comunidades</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
-    <style>
-        /* Eliminamos cualquier margen/padding por defecto que empuje contenido */
-        html, body {
-            margin: 0;
-            padding: 0;
-            /* Ocultamos el desbordamiento horizontal siempre */
-            overflow-x: hidden;
-            /* Aseguramos que el cuerpo ocupe todo el alto */
-            min-height: 100%;
-        }
+:root {
+    --bg: #0a0f1a;
+    --card-bg: #161c2d;
+    --text: #ffffff;
+    --text-dim: #94a3b8;
+    --accent: #3b82f6;
+    --tag-bg: rgba(59, 130, 246, 0.1);
+}
 
-        .hero {
-            /* Forzamos que la sección inicial ocupe EXACTAMENTE el alto de la pantalla */
-            height: 100vh;
-            /* Bloqueamos que nada de lo de abajo se asome dentro de esta sección */
-            overflow: hidden;
-            
-            /* Mantenemos tu diseño centrado */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            position: relative;
-        }
+[data-theme="light"] {
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --text-dim: #64748b;
+    --accent: #2563eb;
+    --tag-bg: rgba(37, 99, 235, 0.1);
+}
 
-        /* Reseteamos márgenes de los títulos dentro del hero para que no empujen */
-        .hero h1 { margin-top: 0; }
-        .hero p { margin-bottom: 0; }
-    </style>
-</head>
-<body>
+* {
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-    <nav>
-        <div class="nav-content">
-            <a href="#sobre-mi">Perfil</a>
-            <a href="#desarrollo">Experiencia</a>
-            <a href="#staff">Gestión</a>
-            <a href="#resenas">Reseñas</a>
-            <button id="theme-toggle" style="background:none; border:none; color:var(--text-dim); cursor:pointer; font-size:1.2rem; margin-left:10px; display: flex; align-items: center;">🌓</button>
-        </div>
-    </nav>
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
 
-    <header class="hero">
-        <h1>TomasAMByt</h1>
-        <p>Desarrollador de Minecraft Semi-Profesional y Gestor de Comunidades</p>
-        <div class="subtitle" style="margin-bottom: 20px;">Especializado en Arquitectura de Servidores y Automatización de Ecosistemas Digitales</div>
-        
-        <div style="display: flex; gap: 40px; margin-top: 10px;">
-            <div style="text-align: center;">
-                <div class="stat-value counter" data-target="15">0</div>
-                <div class="stat-desc">Proyectos</div>
-            </div>
-            <div style="text-align: center;">
-                <div class="stat-value"><span class="counter" data-target="100">0</span>%</div>
-                <div class="stat-desc">Eficacia</div>
-            </div>
-        </div>
-    </header>
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 15, 26, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
 
-    <div class="container" id="sobre-mi">
-        <h2>Trayectoria y Perfil Profesional</h2>
-        <p>
-            Hola, soy Tomas, un desarrollador de 15 años radicado en Buenos Aires. Mi camino en el desarrollo comenzó por la curiosidad de entender cómo los grandes servidores gestionan a miles de personas simultáneamente sin perder estabilidad ni calidad en la experiencia. Con el tiempo, esa curiosidad se transformó en una especialización técnica enfocada en la creación de entornos inmersivos y altamente optimizados dentro de Minecraft.
-            <br><br>
-            A diferencia de otros desarrolladores, mi enfoque es integral: no solo configuro herramientas, sino que diseño la arquitectura lógica que sostiene la comunidad. Trabajo bajo una metodología de aprendizaje constante y transparencia técnica, asegurando que cada línea de configuración y cada bot desplegado cumplan con estándares profesionales. Mi objetivo es facilitar la interacción entre el usuario y la tecnología, eliminando fricciones y automatizando procesos repetitivos para que el equipo de staff pueda enfocarse en lo humano.
-        </p>
-    </div>
+.nav-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
 
-    <div class="container" id="desarrollo">
-        <h2>Ingeniería Técnica y Experiencia</h2>
-        <div class="grid">
-            <div class="card">
-                <span class="tag">Infraestructura</span>
-                <h3>Arquitectura en Minecraft</h3>
-                <p>
-                    Me especializo en la implementación de mecánicas complejas utilizando el potencial nativo de servidores Paper y Spigot. Poseo un dominio avanzado de LuckPerms para la seguridad y jerarquías, DeluxeMenus para interfaces visuales intuitivas y ConditionalEvents para programar comportamientos dinámicos que reaccionan a las acciones de los jugadores en tiempo real. Mi trabajo garantiza que el servidor sea ligero, potente y único en su clase.
-                </p>
-            </div>
+nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-            <div class="card">
-                <span class="tag">Automatización</span>
-                <h3>Desarrollo de Sistemas Python</h3>
-                <p>
-                    Utilizo Python y la librería discord.py para construir el sistema nervioso de las comunidades. Desarrollo bots personalizados que manejan desde economías globales interconectadas hasta sistemas de soporte por tickets con registros auditables. Mi enfoque principal es la programación asíncrona, lo que permite que las herramientas respondan al instante sin importar el volumen de usuarios activos.
-                </p>
-            </div>
+nav a:hover {
+    color: var(--accent);
+}
 
-            <div class="card">
-                <span class="tag">Sistemas</span>
-                <h3>Gestión de Entornos Linux y Termux</h3>
-                <p>
-                    Para un control total sobre la infraestructura, opero directamente desde terminales Linux. Utilizo entornos como Termux para realizar mantenimiento remoto, gestionar bases de datos y auditar archivos de configuración en caliente. Esta capacidad técnica me permite optimizar el rendimiento de los recursos del sistema al máximo nivel posible, garantizando una estabilidad superior.
-                </p>
-            </div>
-        </div>
-    </div>
+.hero {
+    text-align: center;
+    padding: 0 20px;
+}
 
-    <div class="container" id="staff">
-        <h2>Gestión de Redes y Liderazgo</h2>
-        <div class="grid">
-            <div class="card">
-                <h3 style="color: var(--accent);">Gobernanza de Comunidades</h3>
-                <p>
-                    He liderado proyectos de gran envergadura, incluyendo la gestión de redes de servidores y procesos críticos de fusión, como la unión de NocturneCraft con DexlunMC. Mi rol implica diseñar los protocolos de convivencia, seguridad y operación que permiten que equipos multidisciplinarios trabajen en armonía bajo una visión común.
-                </p>
-            </div>
-            <div class="card">
-                <h3 style="color: var(--accent);">Resolución Ética de Conflictos</h3>
-                <p>
-                    Entiendo la moderación como un ejercicio de imparcialidad y ética. Me encargo de la selección y capacitación de personal, estableciendo normativas claras que protegen la integridad de la comunidad. Mi experiencia me permite tomar decisiones críticas bajo presión, priorizando siempre la salud del ecosistema digital a largo plazo.
-                </p>
-            </div>
-        </div>
-    </div>
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(to bottom, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-    <div class="container" id="resenas">
-        <h2>Reseñas de Colaboradores</h2>
-        <div class="grid">
-            <div class="card">
-                <p>"Tomas tiene una capacidad técnica asombrosa para optimizar el rendimiento del servidor y liderar equipos hacia objetivos claros."</p>
-                <strong style="color: var(--accent);">— Socio en NocturneCraft</strong>
-            </div>
-            <div class="card">
-                <p>"Su profesionalismo en la gestión de redes y automatización de procesos complejos marcó la diferencia en nuestras integraciones."</p>
-                <strong style="color: var(--accent);">— Equipo de DexlunMC</strong>
-            </div>
-        </div>
-    </div>
+.hero p {
+    font-size: 1.25rem;
+    color: var(--accent);
+    font-weight: 600;
+    max-width: 600px;
+}
 
-    <footer>
-        <p>&copy; 2026 - Portfolio de TomasAMByt</p>
-    </footer>
+.subtitle {
+    color: var(--text-dim);
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.container {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-dim);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
