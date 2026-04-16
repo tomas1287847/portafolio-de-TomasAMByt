@@ -12,67 +12,71 @@
     <nav>
         <div class="nav-content">
             <a href="#sobre-mi">Perfil</a>
-            <a href="#desarrollo">Ingeniería</a>
-            <a href="#staff">Liderazgo</a>
+            <a href="#desarrollo">Experiencia</a>
+            <a href="#staff">Gestión</a>
             <a href="#resenas">Reseñas</a>
             <button id="theme-toggle" style="background:none; border:none; color:var(--text-dim); cursor:pointer; font-size:1.2rem; margin-left:10px; display: flex; align-items: center;">🌓</button>
         </div>
     </nav>
 
-    <header class="hero" style="overflow: hidden; height: 100vh;">
+    <header class="hero" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0; padding: 0;">
         <h1>TomasAMByt</h1>
         <p>Desarrollador de Minecraft Semi-Profesional y Gestor de Comunidades</p>
+        <div class="subtitle" style="margin-bottom: 20px;">Especializado en Arquitectura de Servidores y Automatización de Ecosistemas Digitales</div>
         
+        <div style="display: flex; gap: 40px; margin-top: 10px;">
+            <div style="text-align: center;">
+                <div class="stat-value counter" data-target="15">0</div>
+                <div class="stat-desc">Proyectos</div>
+            </div>
+            <div style="text-align: center;">
+                <div class="stat-value"><span class="counter" data-target="100">0</span>%</div>
+                <div class="stat-desc">Eficacia</div>
+            </div>
+        </div>
     </header>
 
     <div class="container" id="sobre-mi">
-        <h2>Perfil Profesional</h2>
+        <h2>¿Quién soy?</h2>
         <p>
-            Hola, me llamo Tomas. Soy un desarrollador enfocado en la creación de experiencias únicas dentro de Minecraft y la automatización de comunidades en Discord. 
-            Me dedico a la **optimización de rendimiento** y al diseño de mecánicas personalizadas que definen la identidad de una red.
+            Hola, me llamo Tomas. Soy un desarrollador enfocado en la creación de experiencias únicas dentro de Minecraft. 
+            Me especializo en la **configuración técnica de servidores** (estoy en constante aprendizaje) y en la gestión integral de comunidades digitales.
         </p>
     </div>
 
     <div class="container" id="desarrollo">
-        <h2>Ingeniería y Desarrollo Técnico</h2>
+        <h2>Experiencia como Desarrollador</h2>
         <div class="grid">
             <div class="card">
-                <span class="tag">Arquitectura de Fondo</span>
-                <h3>Servidores de Minecraft</h3>
-                <p>
-                    Especialista en entornos complejos mediante plugins nucleares. Dominio de **LuckPerms** para jerarquías, **DeluxeMenus** para interfaces dinámicas y **ConditionalEvents** para lógica personalizada.
-                </p>
-                <div class="tech-stack">
-                    <span class="tech-item">Paper/Spigot</span>
-                    <span class="tech-item">Etiquetas NBT</span>
-                    <span class="tech-item">Sincronización de Base de Datos</span>
-                </div>
+                <span class="tag">Minecraft</span>
+                <h3>Configuración de Plugins</h3>
+                <p>Manejo avanzado de **LuckPerms**, **DeluxeMenus** y **ConditionalEvents** para crear mecánicas personalizadas sin necesidad de mods.</p>
             </div>
 
             <div class="card">
-                <span class="tag">Automatización</span>
-                <h3>Sistemas con Python</h3>
-                <p>
-                    Desarrollo de bots personalizados con **discord.py** para economía interconectada, tickets de soporte y registros auditables en tiempo real.
-                </p>
-                <div class="tech-stack">
-                    <span class="tech-item">Python 3.x</span>
-                    <span class="tech-item">Programación Asíncrona</span>
-                    <span class="tech-item">Integración de API</span>
-                </div>
+                <span class="tag">Python</span>
+                <h3>Bots de Discord</h3>
+                <p>Desarrollo de bots con **discord.py** para sistemas de economía, tickets de soporte y sincronización de datos en tiempo real.</p>
+            </div>
+
+            <div class="card">
+                <span class="tag">Linux/Termux</span>
+                <h3>Gestión de Entornos</h3>
+                <p>Experiencia gestionando archivos y bases de datos desde terminal, optimizando el rendimiento de los recursos del sistema.</p>
             </div>
         </div>
     </div>
 
     <div class="container" id="staff">
-        <h2>Gobernanza y Gestión</h2>
+        <h2>Experiencia como Staff</h2>
         <div class="grid">
             <div class="card">
-                <span class="tag">Liderazgo y Ética</span>
-                <h3>Gestión de Equipos de Staff</h3>
-                <p>
-                    Mediación de conflictos y ejecución de normativas con imparcialidad. Diseño de protocolos de seguridad y procesos de selección rigurosos para mantener entornos profesionales.
-                </p>
+                <h3 style="color: var(--accent);">Gestión de Redes</h3>
+                <p>He trabajado en la fusión y administración de redes de servidores, asegurando una transición fluida para los jugadores.</p>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--accent);">Moderación y Ética</h3>
+                <p>Enfoque profesional en la resolución de conflictos, aplicación de reglas y selección de personal para el equipo.</p>
             </div>
         </div>
     </div>
@@ -81,11 +85,11 @@
         <h2>Reseñas de Colegas</h2>
         <div class="grid">
             <div class="card">
-                <p>"Excelente capacidad técnica para resolver conflictos internos y optimizar el rendimiento del servidor."</p>
-                <strong style="color: var(--accent);">— Socio de NocturneCraft</strong>
+                <p>"Excelente capacidad técnica para optimizar el rendimiento del servidor y liderar equipos."</p>
+                <strong style="color: var(--accent);">— Colaborador de NocturneCraft</strong>
             </div>
             <div class="card">
-                <p>"Un profesional en la gestión de redes, asegurando transiciones fluidas durante las fusiones de servidores."</p>
+                <p>"Gran profesionalismo en la gestión de redes y automatización de procesos."</p>
                 <strong style="color: var(--accent);">— Equipo de DexlunMC</strong>
             </div>
         </div>
