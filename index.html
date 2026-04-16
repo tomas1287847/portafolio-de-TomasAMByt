@@ -23,6 +23,7 @@
             padding: 0;
             box-sizing: border-box;
             position: relative;
+            overflow: hidden; /* Esto evita que se asome lo de abajo */
         }
         h1 { margin-top: 0; }
     </style>
@@ -43,6 +44,15 @@
         <h1>TomasAMByt</h1>
         <p>Desarrollador de Minecraft Semi-Profesional y Staff Manager</p>
         <div class="subtitle" style="margin-bottom: 20px;">Especializado en la configuración de Servidores y Automatización de Ecosistemas Digitales</div>
+        
+        <div style="display: flex; gap: 40px; margin-top: 10px;">
+            <div style="text-align: center;">
+                <div class="stat-value counter" data-target="15">0</div>
+                <div class="stat-desc">Proyectos</div>
+            </div>
+            <div style="text-align: center;">
+                <div class="stat-value"><span class="counter" data-target="100">0</span>%</div>
+                <div class="stat-desc">Eficacia</div>
             </div>
         </div>
     </header>
