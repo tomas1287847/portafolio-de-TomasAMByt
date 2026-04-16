@@ -3,132 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | TomasAMByt - Desarrollador y Gestor de Comunidades</title>
+    <title>Portfolio | TomasAMByt</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Bloqueo para que la primera pantalla sea perfecta */
-        html, body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            position: relative;
-            overflow: hidden; /* Esto elimina la franja de abajo */
-        }
-        h1 { margin-top: 0; }
-    </style>
 </head>
 <body>
+    <div class="bg-gradient"></div>
 
     <nav>
         <div class="nav-content">
             <a href="#sobre-mi">Perfil</a>
-            <a href="#desarrollo">Experiencia</a>
-            <a href="#staff">Gestión</a>
+            <a href="#desarrollo">Ingeniería</a>
+            <a href="#staff">Liderazgo</a>
             <a href="#resenas">Reseñas</a>
-            <button id="theme-toggle" style="background:none; border:none; color:var(--text-dim); cursor:pointer; font-size:1.2rem; margin-left:10px; display: flex; align-items: center;">🌓</button>
+            <button id="theme-toggle">🌓</button>
         </div>
     </nav>
 
     <header class="hero">
-        <h1>TomasAMByt</h1>
-        <p>Desarrollador de Minecraft Semi-Profesional y Staff Manager</p>
-        <div class="subtitle" style="margin-bottom: 20px;">Especializado en la configuración de Servidores y Automatización de Ecosistemas Digitales</div>
-        
-        <div style="display: flex; gap: 40px; margin-top: 10px;">
-            <div style="text-align: center;">
-                <div class="stat-value counter" data-target="15">0</div>
-                <div class="stat-desc">Proyectos</div>
-            </div>
-            <div style="text-align: center;">
-                <div class="stat-value"><span class="counter" data-target="100">0</span>%</div>
-                <div class="stat-desc">Eficacia</div>
-            </div>
+        <div class="hero-content">
+            <span class="badge">Disponible para proyectos</span>
+            <h1>TomasAMByt</h1>
+            <p>Dev en proceso de ser Semi-Professional Minecraft Developer & Staff Manager</p>
+            <div class="subtitle">Especializado en Arquitectura de Servidores y Automatización de Ecosistemas Digitales</div>
+            <div class="scroll-indicator"></div>
         </div>
     </header>
 
-    <div class="container" id="sobre-mi">
-        <h2>Trayectoria y Perfil Profesional</h2>
-        <p>
-            Hola, soy Tomas, un desarrollador de 15 años. Mi camino en el desarrollo comenzó por la curiosidad de entender cómo los grandes servidores gestionan a miles de personas simultáneamente sin perder estabilidad ni calidad en la experiencia. Con el tiempo, esa curiosidad se transformó en una especialización técnica enfocada en la creación de entornos inmersivos y altamente optimizados dentro de Minecraft.
-            <br><br>
-            A diferencia de otros desarrolladores, mi enfoque es integral: no solo configuro herramientas, sino que diseño la arquitectura lógica que sostiene la comunidad. Trabajo bajo una metodología de aprendizaje constante y transparencia técnica, asegurando que cada línea de codigo y cada bot desplegado cumplan con estándares profesionales. Mi objetivo es facilitar la interacción entre el usuario y la tecnología, eliminando fricciones y automatizando procesos repetitivos para que el equipo de staff pueda enfocarse en lo humano.
-        </p>
-    </div>
-
-    <div class="container" id="desarrollo">
-        <h2>Ingeniería Técnica y Experiencia</h2>
-        <div class="grid">
-            <div class="card">
-                <span class="tag">Infraestructura</span>
-                <h3>Arquitectura en Minecraft</h3>
+    <main class="container">
+        <section id="sobre-mi" class="section">
+            <h2>Trayectoria y Perfil Profesional</h2>
+            <div class="bio-card">
                 <p>
-                    Me especializo en la implementación de mecánicas complejas utilizando el potencial nativo de servidores Paper y Spigot. Poseo un dominio avanzado de LuckPerms para la seguridad y jerarquías, DeluxeMenus para interfaces visuales intuitivas y ConditionalEvents para programar comportamientos dinámicos que reaccionan a las acciones de los jugadores en tiempo real. Mi trabajo garantiza que el servidor sea ligero, potente y único en su clase.
+                    Hola, soy Tomas, un desarrollador de 15 años. Mi camino en el desarrollo comenzó por la curiosidad de entender cómo los grandes servidores gestionan a miles de personas simultáneamente sin perder estabilidad ni calidad en la experiencia. Con el tiempo, esa curiosidad se transformó en una especialización técnica enfocada en la creación de entornos inmersivos y altamente optimizados dentro de Minecraft.
+                    <br><br>
+                    A diferencia de otros desarrolladores, mi enfoque es integral: no solo configuro herramientas, sino que diseño la arquitectura lógica que sostiene la comunidad. Trabajo bajo una metodología de aprendizaje constante y transparencia técnica, asegurando que cada línea de codigo y cada bot desplegado cumplan con estándares profesionales. Mi objetivo es facilitar la interacción entre el usuario y la tecnología, eliminando fricciones y automatizando procesos repetitivos para que el equipo de staff pueda enfocarse en lo humano.
                 </p>
             </div>
+        </section>
 
-            <div class="card">
-                <span class="tag">Automatización</span>
-                <h3>Desarrollo de Sistemas Python</h3>
-                <p>
-                    Utilizo Python y la librería discord.py para construir el sistema nervioso de las comunidades. Desarrollo bots personalizados que manejan desde economías globales interconectadas hasta sistemas de soporte por tickets con registros auditables. Mi enfoque principal es la programación asíncrona, lo que permite que las herramientas respondan al instante sin importar el volumen de usuarios activos.
-                </p>
-            </div>
+        <section id="desarrollo" class="section">
+            <h2>Ingeniería Técnica</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <span class="tag">Infraestructura</span>
+                    <h3>Arquitectura en Minecraft</h3>
+                    <p>Me especializo en la implementación de mecánicas complejas utilizando el potencial nativo de servidores Paper y Spigot. Poseo un dominio avanzado de LuckPerms, DeluxeMenus y ConditionalEvents.</p>
+                </div>
 
-            <div class="card">
-                <span class="tag">Sistemas</span>
-                <h3>Gestión de Entornos Linux y Termux</h3>
-                <p>
-                    Para un control total sobre la infraestructura, opero directamente desde terminales Linux. Utilizo entornos como Termux para realizar mantenimiento remoto, gestionar bases de datos y auditar archivos de configuración en caliente. Esta capacidad técnica me permite optimizar el rendimiento de los recursos del sistema al máximo nivel posible, garantizando una estabilidad superior.
-                </p>
-            </div>
-        </div>
-    </div>
+                <div class="card">
+                    <div class="card-icon">🐍</div>
+                    <span class="tag">Automatización</span>
+                    <h3>Sistemas Python</h3>
+                    <p>Utilizo discord.py para construir el sistema nervioso de las comunidades. Desarrollo bots personalizados para economías globales y sistemas de soporte asíncronos.</p>
+                </div>
 
-    <div class="container" id="staff">
-        <h2>Gestión de Redes y Liderazgo</h2>
-        <div class="grid">
-            <div class="card">
-                <h3 style="color: var(--accent);">Gobernanza de Comunidades</h3>
-                <p>
-                    He liderado proyectos de gran envergadura, incluyendo la gestión de redes de servidores y procesos críticos de fusión, como la unión de NocturneCraft con DexlunMC. Mi rol implica diseñar los protocolos de convivencia, seguridad y operación que permiten que equipos multidisciplinarios trabajen en armonía bajo una visión común.
-                </p>
+                <div class="card">
+                    <div class="card-icon">🐧</div>
+                    <span class="tag">Sistemas</span>
+                    <h3>Linux & Termux</h3>
+                    <p>Opero directamente desde terminales Linux para realizar mantenimiento remoto, gestionar bases de datos y optimizar el rendimiento al máximo nivel.</p>
+                </div>
             </div>
-            <div class="card">
-                <h3 style="color: var(--accent);">Resolución Ética de Conflictos</h3>
-                <p>
-                    Entiendo la moderación como un ejercicio de imparcialidad y ética. Me encargo de la selección y capacitación de personal, estableciendo normativas claras que protegen la integridad de la comunidad. Mi experiencia me permite tomar decisiones críticas bajo presión, priorizando siempre la salud del ecosistema digital a largo plazo.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container" id="resenas">
-        <h2>Reseñas de Colaboradores</h2>
-        <div class="grid">
-            <div class="card">
-                <p>"Tomas tiene una capacidad técnica asombrosa para optimizar el rendimiento del servidor y liderar equipos hacia objetivos claros."</p>
-                <strong style="color: var(--accent);">— Socio en NocturneCraft</strong>
-            </div>
-            <div class="card">
-                <p>"Su profesionalismo en la gestión de redes y automatización de procesos complejos marcó la diferencia en nuestras integraciones."</p>
-                <strong style="color: var(--accent);">— Equipo de DexlunMC</strong>
-            </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 - Portfolio Profesional de TomasAMByt</p>
+        <p>&copy; 2026 - TomasAMByt</p>
     </footer>
 
     <script src="script.js"></script>
