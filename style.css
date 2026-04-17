@@ -1,10 +1,6 @@
-html {
-    scroll-behavior: smooth;
-}
-
-/* Centrado Global */
+/* Contenedor principal para que nada se estire al infinito */
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     display: flex;
@@ -14,74 +10,48 @@ html {
 
 .section {
     width: 100%;
-    padding: 80px 0;
-    text-align: center; /* Centra los títulos */
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido de la sección */
 }
 
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    display: inline-block;
-    border-bottom: 3px solid var(--accent);
-    padding-bottom: 10px;
+/* Ajuste de la Grilla para que no estire las tarjetas */
+.grid {
+    display: grid;
+    /* Esto hace que las columnas se ajusten solas pero con un tamaño lógico */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 380px)); 
+    gap: 2rem;
+    width: 100%;
+    justify-content: center; /* Centra las tarjetas en la pantalla */
 }
 
-/* Tarjeta de Biografía */
+/* Ajuste de las tarjetas */
+.card {
+    background: var(--card-bg);
+    padding: 2.2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Para que todas midan lo mismo en la misma fila */
+    transition: transform 0.3s ease;
+}
+
+/* La Bio-card también necesitaba un límite de ancho para no verse gigante */
 .bio-card {
     background: var(--card-bg);
     padding: 3rem;
     border-radius: 24px;
     border: 1px solid var(--border);
-    text-align: left; /* El texto interno se lee mejor a la izquierda */
-    max-width: 900px;
+    max-width: 950px; /* Evita que el texto de la biografía se estire demasiado */
     margin: 0 auto;
 }
 
-.bio-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.bio-column h3 {
-    color: var(--accent);
-    margin-bottom: 1rem;
-}
-
-/* Grid de Tarjetas */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    width: 100%;
-    justify-content: center;
-}
-
-.card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra iconos y títulos de tarjetas */
-    text-align: center;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent);
-}
-
+/* Ajuste para que los textos dentro de las cards no se vean raros */
 .card p {
-    text-align: left; /* El texto largo de la descripción queda mejor a la izquierda */
+    text-align: left;
     font-size: 0.95rem;
-    margin-top: 1rem;
-}
-
-.reviewer {
-    margin-top: 1.5rem;
-    width: 100%;
-    text-align: right;
+    line-height: 1.6;
+    margin-top: auto; /* Empuja el contenido hacia arriba si hay espacio */
 }
