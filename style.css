@@ -1,57 +1,212 @@
-/* Contenedor principal para que nada se estire al infinito */
+:root {
+    --bg: #030712; /* Fondo profundo */
+    --card-bg: rgba(17, 24, 39, 0.7); /* Transparencia pro */
+    --text: #f9fafb;
+    --text-dim: #9ca3af;
+    --accent: #3b82f6; /* Azul brillante */
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+/* 1. Reset y Estilos Globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* 2. Fondo con profundidad (Efecto Gradiente) */
+.bg-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% -20%, #1e293b 0%, #030712 100%);
+    z-index: -1;
+}
+
+/* 3. Navegación Centrada */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.2rem;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+}
+
+.nav-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav a:hover { color: var(--accent); }
+
+/* 4. Hero (Pantalla de inicio) */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.badge {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    border: 1px solid var(--accent);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.subtitle {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+/* 5. Contenedor y Secciones Centradas */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra las secciones */
+    align-items: center;
 }
 
 .section {
     width: 100%;
-    padding: 60px 0;
+    padding: 100px 0 60px 0;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el contenido de la sección */
+    align-items: center;
 }
 
-/* Ajuste de la Grilla para que no estire las tarjetas */
-.grid {
-    display: grid;
-    /* Esto hace que las columnas se ajusten solas pero con un tamaño lógico */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 380px)); 
-    gap: 2rem;
-    width: 100%;
-    justify-content: center; /* Centra las tarjetas en la pantalla */
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 700;
 }
 
-/* Ajuste de las tarjetas */
-.card {
-    background: var(--card-bg);
-    padding: 2.2rem;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Para que todas midan lo mismo en la misma fila */
-    transition: transform 0.3s ease;
-}
-
-/* La Bio-card también necesitaba un límite de ancho para no verse gigante */
+/* 6. Bio-Card (Tu visión) */
 .bio-card {
     background: var(--card-bg);
     padding: 3rem;
     border-radius: 24px;
     border: 1px solid var(--border);
-    max-width: 950px; /* Evita que el texto de la biografía se estire demasiado */
-    margin: 0 auto;
+    backdrop-filter: blur(10px);
+    max-width: 900px;
 }
 
-/* Ajuste para que los textos dentro de las cards no se vean raros */
-.card p {
+.bio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.bio-column h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.bio-closure {
+    font-style: italic;
+    color: var(--accent);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* 7. Grid de Tarjetas (Lo que arregla el estiramiento) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 360px));
+    gap: 2rem;
+    width: 100%;
+    justify-content: center; /* Esto las mantiene en el medio */
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
     text-align: left;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-top: auto; /* Empuja el contenido hacia arriba si hay espacio */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* 8. Footer */
+footer {
+    text-align: center;
+    padding: 4rem;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border);
 }
